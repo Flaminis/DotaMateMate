@@ -11,12 +11,11 @@ import Parse
 import Kingfisher
 import SwiftSpinner
 
-class GuideObserveVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UICollectionViewDataSource, UICollectionViewDelegate,UITextViewDelegate
- {
+
+class GuideObserveVC: UIViewController,UITableViewDataSource,UITableViewDelegate,UICollectionViewDataSource, UICollectionViewDelegate,UITextViewDelegate {
+    
     private let reuseIdentifier = "SpellObserveCell" //table
     private let reuseID = "ItemObserveCell" // collection
-    
-    
    
     @IBOutlet weak var spellRowTableView: UITableView!
     
@@ -28,9 +27,7 @@ class GuideObserveVC: UIViewController,UITableViewDataSource,UITableViewDelegate
     @IBOutlet weak var heroNameLabel: UILabel!
     
     var guideShown: Guide?
-    
     var backGroundImageProsto: UIImage?
-    
     
     var spellsFromParse = ""
     var SpellArray = [String]()
@@ -40,28 +37,25 @@ class GuideObserveVC: UIViewController,UITableViewDataSource,UITableViewDelegate
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
         self.view.backgroundColor = UIColor.darkGrayColor()
         
         heroNameLabel.text = guideShown?.heroGuidePosition
+        
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        
         if guideShown != nil {
             
-        backGroundImageView.image = backGroundImageProsto
-            if guideShown != nil{
-//
-        self.spellsFromParse = (guideShown?.skillBuild)!
-        self.SpellArray = self.spellsFromParse.characters.split{$0 == "+"}.map(String.init)
-        self.itemsFromParse = (guideShown?.items)!
-        self.itemArray = self.itemsFromParse.characters.split{$0 == "+"}.map(String.init)
+            backGroundImageView.image = backGroundImageProsto
        
-       itemProgressionCollectionView.reloadData()
-       spellRowTableView.reloadData()
-        SwiftSpinner.hide()
-
-                
-                
-            }
-            
+            self.spellsFromParse = (guideShown?.skillBuild)!
+            self.SpellArray = self.spellsFromParse.characters.split{$0 == "+"}.map(String.init)
+            self.itemsFromParse = (guideShown?.items)!
+            self.itemArray = self.itemsFromParse.characters.split{$0 == "+"}.map(String.init)
+           
+            itemProgressionCollectionView.reloadData()
+            spellRowTableView.reloadData()
+            SwiftSpinner.hide()
         }
        
     }
@@ -76,6 +70,9 @@ class GuideObserveVC: UIViewController,UITableViewDataSource,UITableViewDelegate
     }
     
     override func viewDidLayoutSubviews() {
+        //
+        //This can be refactored leaving for now
+        //
         super.viewDidLayoutSubviews()
         
         guard let flowLayout = itemProgressionCollectionView.collectionViewLayout as? UICollectionViewFlowLayout else {
@@ -93,7 +90,6 @@ class GuideObserveVC: UIViewController,UITableViewDataSource,UITableViewDelegate
     override func viewDidAppear(animated: Bool) {
         
         super.viewDidAppear(true)
-
         incrementVoteCount()
         guideDescriptionTV.text = guideShown?.guideDescription
         self.guideDescriptionTV.setContentOffset(CGPointMake(0,0), animated: true)
@@ -106,38 +102,22 @@ class GuideObserveVC: UIViewController,UITableViewDataSource,UITableViewDelegate
         guideShown?.saveInBackground()
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    ///////
     //MARK: TableViewDelegates
-
+    ///////
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return SpellArray.count
     }
-    
-    //dobavit descrpition Spella
-//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        abilityOrder.removeAtIndex(indexPath.row)
-//        
-//        spellTableView.reloadData()
-//    }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier) as! GuideObserveSpellTVC
         
-       cell.spellHeroLevel.text = String(indexPath.row+1)
-    
-       cell.spellPicture.kf_setImageWithURL(NSURL(string: "http://media.steampowered.com/apps/dota2/images/abilities/\(SpellArray[indexPath.row])_hp2.png")!)
-    
+        cell.spellHeroLevel.text = String(indexPath.row+1)
+        
+        let spellImageUrl = NSURL(string:"http://media.steampowered.com/apps/dota2/images/abilities/\(SpellArray[indexPath.row])_hp2.png")
+        cell.spellPicture.kf_setImageWithURL(spellImageUrl!)
         
         return cell
     }
@@ -146,38 +126,15 @@ class GuideObserveVC: UIViewController,UITableViewDataSource,UITableViewDelegate
         return 65
     }
     
-    func tableViewScrollToBottom(animated: Bool) {
-        
-        let delay = 0.1 * Double(NSEC_PER_SEC)
-        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
-        
-        dispatch_after(time, dispatch_get_main_queue(), {
-            
-            let numberOfSections = self.spellRowTableView.numberOfSections
-            let numberOfRows = self.spellRowTableView.numberOfRowsInSection(numberOfSections-1)
-            
-            if numberOfRows > 0 {
-                let indexPath = NSIndexPath(forRow: numberOfRows-1, inSection: (numberOfSections-1))
-                self.spellRowTableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: animated)
-            }
-            
-        })
-    }
-
-    
-    
     //MARK: CVC init
-    
-    
-    
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return self.itemArray.count    }
+        return self.itemArray.count
+    }
     
     
     //cell config

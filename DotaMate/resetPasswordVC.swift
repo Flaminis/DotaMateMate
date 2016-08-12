@@ -16,35 +16,22 @@ class resetPasswordVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        
+    
         //krasota
-        emailTextField.attributedPlaceholder =
-            NSAttributedString(string: "Email", attributes: [NSForegroundColorAttributeName : UIColor.grayColor()])
+        emailTextField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSForegroundColorAttributeName : UIColor.grayColor()])
         resetButtonOutlet.layer.cornerRadius = 4
         cancelButtonOutlet.layer.cornerRadius = 4
-
-        
-        
-        
-        
-        
-        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
  
     @IBAction func cancelButton(sender: UIButton) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+
     @IBAction func resetButton(sender: UIButton) {
+    
         //hide keyboard
         self.view.endEditing(true)
-    //if empty
+        
         if emailTextField.text!.isEmpty {
             let alert = UIAlertController(title: "Email field", message: "is empty", preferredStyle: UIAlertControllerStyle.Alert)
             let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil)
@@ -53,35 +40,22 @@ class resetPasswordVC: UIViewController {
         }
         
         PFUser.requestPasswordResetForEmailInBackground(emailTextField.text!) { (success:Bool, error:NSError?) in
+        
             if success {
-                
                 let alert = UIAlertController(title: "Email for reseting password", message: "has been sent", preferredStyle: UIAlertControllerStyle.Alert)
                 let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
-                self.dismissViewControllerAnimated(true, completion: nil)
-                    
+                    self.dismissViewControllerAnimated(true, completion: nil)
                 })
 
                 alert.addAction(ok)
                 self.presentViewController(alert, animated: true, completion: nil)
-                
-            }
-            else {
+            
+            } else {
                 let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.Alert)
                 let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil)
                 alert.addAction(ok)
                 self.presentViewController(alert, animated: true, completion: nil)
-            
             }
         }
-        
-        
-    
-    
-    
-    
-    
-    
     }
-
-    
 }

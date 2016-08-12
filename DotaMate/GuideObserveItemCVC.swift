@@ -9,5 +9,7 @@
 import UIKit
 
 class GuideObserveItemCVC: UICollectionViewCell {
+    
     @IBOutlet weak var itemIcon: UIImageView!
+
 }

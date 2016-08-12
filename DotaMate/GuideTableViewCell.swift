@@ -21,7 +21,5 @@ class ArticleTableViewCell: UITableViewCell {
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var dateCreatedLabel: UILabel!
     
-    @IBAction func likeButtonPressed(sender: UIButton) {
-        
-    }
+    @IBAction func likeButtonPressed(sender: UIButton) {}
 }

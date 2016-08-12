@@ -23,7 +23,28 @@ class profileVC: UICollectionViewController {
     var guideSkip = 0
     var upvotes = 0
     var isLoading = false
+    
+    override func viewDidLoad() {
+        
+        super.viewDidLoad()
 
+        collectionView?.backgroundColor = .whiteColor()
+        
+        //title on top
+        self.navigationItem.title = "DotaMate"//PFUser.currentUser()?.username?.uppercaseString
+        
+        loadGuides()
+        
+        //pull to refresh
+        refresher = UIRefreshControl()
+        refresher.addTarget(self, action: #selector(self.refresh), forControlEvents: UIControlEvents.ValueChanged)
+        collectionView?.addSubview(refresher)
+       
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.refresh), name: "liked", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.refresh), name: "unliked", object: nil)
+
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
@@ -38,13 +59,12 @@ class profileVC: UICollectionViewController {
         
         flowLayout.itemSize = CGSize(width: width, height: height)
     }
-
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
         self.collectionView?.reloadData()
-        
-        
     }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         let tracker = GAI.sharedInstance().defaultTracker
@@ -54,40 +74,28 @@ class profileVC: UICollectionViewController {
         tracker.send(builder.build() as [NSObject : AnyObject])
     }
     
-    
-    override func viewDidLoad() {
-        
-        super.viewDidLoad()
-       
-        
-        collectionView?.backgroundColor = .whiteColor()
-        
-        //title on top
-        self.navigationItem.title = "DotaMate"//PFUser.currentUser()?.username?.uppercaseString
+    //refresh on pull
+    func refresh() {
         loadGuides()
-        //pull to refresh
-        refresher = UIRefreshControl()
-       refresher.addTarget(self, action: #selector(self.refresh), forControlEvents: UIControlEvents.ValueChanged)
-        collectionView?.addSubview(refresher)
-       
-    
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.refresh), name: "liked", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.refresh), name: "unliked", object: nil)
-
+        refresher.endRefreshing()
     }
     
-    func loadGuides(){
+    func loadGuides() {
         Guide.fetchGuides(0, limit: 10) { (guides, error) in
             
             guard let guides = guides else {return}
             self.guideList.removeAll(keepCapacity: false)
             self.guideList = guides
             self.collectionView?.reloadData()
-            }
+        }
     }
     
-    func loadMoreGuides(){
-        if isLoading { return }
+    func loadMoreGuides() {
+        
+        if isLoading {
+            return
+        }
+        
         isLoading = true
         Guide.fetchGuides(guideList.count, limit: 10) { (guides, error) in
             guard let guides = guides else {return}
@@ -95,52 +103,38 @@ class profileVC: UICollectionViewController {
             self.collectionView?.reloadData()
             self.isLoading = false
         }
-    }
-
-    
-    //refresh on pull
-    func refresh() {
-        loadGuides()
-        refresher.endRefreshing()
         
     }
-    
    
     //header config
     override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
         
-        
-        
         let header = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: "Header", forIndexPath: indexPath)  as! headerForProfileV
        
-        //let myuser = PFUser.currentUser() as? User
-//            header.numberOfUpVotesLabel.text = ("\(myuser.upvotes)")
         loadUpVotes()
+        
         header.numberOfUpVotesLabel.text="\(self.upvotes)"
-        
         header.usernameLabel.text = PFUser.currentUser()?.username
-        let imageData = User.currentUser()?.avatar
-       
-            
-            if (imageData != nil){
-            imageData?.getDataInBackgroundWithBlock({ (data, error) in
-                if (data != nil){
-                let image = UIImage(data: data!)
-                if (image != nil) {
-                    header.profileImage.image = image }
-                header.profileImage.layer.cornerRadius = header.profileImage.frame.size.height/1.31
-                header.profileImage.clipsToBounds = true
-                }})
-            
-              
         
-       
-    }
+        let imageData = User.currentUser()?.avatar
+    
+            if (imageData != nil) {
+                
+                imageData?.getDataInBackgroundWithBlock({ (data, error) in
+                
+                if (data != nil) {
+                    let image = UIImage(data: data!)
+                    if (image != nil) {
+                        header.profileImage.image = image }
+                        header.profileImage.layer.cornerRadius = header.profileImage.frame.size.height/1.31
+                        header.profileImage.clipsToBounds = true
+                    }
+                })
+            }
+        
          return header
     }
     
-
-
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return guideList.count
     }
@@ -150,13 +144,12 @@ class profileVC: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
     
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! GuideCVC
-      
-//
         let guide = guideList[indexPath.row]
         
         let imageName = "\(guide.title)"
         var image = UIImage(named: imageName)
         let jpegImage = UIImageJPEGRepresentation(image!, 1)
+ 
         image = (UIImage(data: jpegImage!))
         
         cell.heroIcon.image = image
@@ -167,15 +160,14 @@ class profileVC: UICollectionViewController {
         cell.numberOfViews.text = "\(guide.guideNumOfViews)"
         cell.dateCreated.text = guide.createdAt?.dateTimeAgo()
         cell.deleteButton.hidden = true
-        if ((cell.authorName.text! == User.currentUser()?.username!) || (User.currentUser()?.username! == "DotaMate")) && (User.currentUser()?.username! != "Guest"){
+        
+        if ((cell.authorName.text! == User.currentUser()?.username!) || (User.currentUser()?.username! == "DotaMate")) && (User.currentUser()?.username! != "Guest") {
             cell.deleteButton.hidden = false
         }
         
-        //
         cell.outletForLike.selected = guide.userLiked
-        
-        
         cell.delegate = self
+        
         return cell
     }
     
@@ -188,26 +180,26 @@ class profileVC: UICollectionViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-      if segue.identifier=="observe"{
-        let destVC = segue.destinationViewController as! GuideObserveVC
-        if let cell = sender as? GuideCVC{
-            destVC.backGroundImageProsto = cell.heroIcon.image
-            if let indexPath = collectionView?.indexPathForCell(cell){
-                destVC.guideShown = guideList[indexPath.row]
+        if segue.identifier=="observe"  {
+            
+            let destVC = segue.destinationViewController as! GuideObserveVC
+            
+            if let cell = sender as? GuideCVC {
+                destVC.backGroundImageProsto = cell.heroIcon.image
+                
+                if let indexPath = collectionView?.indexPathForCell(cell){
+                    destVC.guideShown = guideList[indexPath.row]
+                }
             }
-            
-            
-           // destVC.guideShown?.guideDescription = cell.cellGuide?.guideDescription
-        }
         }
     }
-    
     
     func loadUpVotes(){
         let query = PFQuery(className:"Guide")
         let text = "\((PFUser.currentUser()?.username!)!)"
         query.whereKey("username", equalTo: text)
-       var counter = 0
+        var counter = 0
+        
         query.findObjectsInBackgroundWithBlock {
             (objects: [PFObject]?, error: NSError?) -> Void in
             
@@ -227,16 +219,12 @@ class profileVC: UICollectionViewController {
             }
         }
     }
-    
-    
-    
-    
-    
 }
 
 extension profileVC: GuideCVCDelegate {
-    func deleteButtonDidPress(cell: GuideCVC, button: UIButton)
-    {
+    
+    func deleteButtonDidPress(cell: GuideCVC, button: UIButton) {
+        
         let indexPath = collectionView?.indexPathForCell(cell)
         let guide = guideList[(indexPath?.row)!]
        
@@ -249,11 +237,11 @@ extension profileVC: GuideCVCDelegate {
         
         let alertView = SCLAlertView(appearance: appearance)
         
-        alertView.addButton("Delete"){
+        alertView.addButton("Delete") {
                 self.deleteGuide(guide)
-            }
+        }
         
-        alertView.addButton("Cancel"){
+        alertView.addButton("Cancel") {
             alertView.hideView()
         }
         
@@ -265,29 +253,29 @@ extension profileVC: GuideCVCDelegate {
         currentGuide.deleteEventually()
         loadGuides()
         self.collectionView!.reloadData()
-
     }
     
     func likeButtonDidPress(cell: GuideCVC, button: UIButton) {
-        if (((User.currentUser()?.username!)! != "Guest")){
-        let indexPath = collectionView?.indexPathForCell(cell)
-        let guide = guideList[indexPath!.row]
+        if (((User.currentUser()?.username!)! != "Guest")) {
+            
+            let indexPath = collectionView?.indexPathForCell(cell)
+            let guide = guideList[indexPath!.row]
         
-        if guide.userLiked {
-            guide.unlike(User.currentUser()!){ _ in}
-                    self.collectionView?.reloadData()
-            
-            
-        } else {
-            guide.like { _ in
-                dispatch_async(dispatch_get_main_queue()) {
-                    self.collectionView?.reloadData()
+            if guide.userLiked {
+                guide.unlike(User.currentUser()!){ _ in}
+                self.collectionView?.reloadData()
+
+            } else {
+                guide.like { _ in
+                    dispatch_async(dispatch_get_main_queue()) {
+                        self.collectionView?.reloadData()
+                    }
                 }
             }
-        }
-    collectionView?.reloadData()
-        }
-        else {
+        
+            collectionView?.reloadData()
+        
+        } else {
             
             let appearance = SCLAlertView.SCLAppearance(
                 kTitleFont: UIFont(name: "HelveticaNeue", size: 20)!,
@@ -295,13 +283,10 @@ extension profileVC: GuideCVCDelegate {
                 kButtonFont: UIFont(name: "HelveticaNeue-Bold", size: 14)!,
                 showCloseButton: true
             )
+            
             let alertView = SCLAlertView(appearance: appearance)
-            
-           
-                
-                alertView.showSuccess("Login as User :)", subTitle: "You have to login as User in order to like the Guides", colorStyle: 0x982D1D, colorTextButton: 0xFFFFFF)
-            
         
+            alertView.showSuccess("Login as User :)", subTitle: "You have to login as User in order to like the Guides", colorStyle: 0x982D1D, colorTextButton: 0xFFFFFF)
+        }
     }
-}
 }

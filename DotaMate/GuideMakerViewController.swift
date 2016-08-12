@@ -16,6 +16,8 @@ import Kingfisher
 import SCLAlertView
 
 
+// TODO: Refactor this entire view alot can be solved with a constants file
+
 private let reuseIdentifier = "SpellCell"
 
 class GuideMakerViewController: UIViewController,UITableViewDataSource,UITableViewDelegate, UITextViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
@@ -913,8 +915,6 @@ class GuideMakerViewController: UIViewController,UITableViewDataSource,UITableVi
     }
     
     @IBAction func spellFouthPressed(sender: UIButton) {
-        
-        
         
         var ulti = 3
         switch hero?.heroLocalizedName {

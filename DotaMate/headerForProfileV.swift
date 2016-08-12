@@ -14,8 +14,9 @@ class headerForProfileV: UICollectionReusableView {
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var backGroundImageHeader: UIImageView!
-    @IBAction func editProfileBtn(sender: UIButton) {
-    }
+    
+    @IBAction func editProfileBtn(sender: UIButton) {}
+    
     @IBAction func logout(sender: UIButton) {
         User.logOut()
     }

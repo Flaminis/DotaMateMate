@@ -10,10 +10,8 @@ import UIKit
 import Parse
 
 class Like: PFObject {
-      
     @NSManaged var author: User
     @NSManaged var guide: Guide
-   
 }
 
 extension Like: PFSubclassing {
@@ -25,6 +23,7 @@ extension Like: PFSubclassing {
             self.registerSubclass()
         }
     }
+    
     static func parseClassName() -> String {
         return ParseClass.Like
     }

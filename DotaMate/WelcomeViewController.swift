@@ -18,35 +18,19 @@ class WelcomeViewController: VideoSplashViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signupButton: UIButton!
     @IBOutlet weak var joinAsGuestButton: UIButton!
-
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         setupVideoBackground()
         
-        
-       
         loginButton.layer.cornerRadius = 4
         signupButton.layer.cornerRadius = 4
         joinAsGuestButton.layer.cornerRadius = 4
-
-        
-        
     }
-    
-    override func viewDidAppear(animated: Bool) {
-        
-        super.viewDidAppear(animated)
-       
-        
-    }
-    
 
     @IBAction func joinAsGuiestAction(sender: UIButton) {
         PFUser.logInWithUsernameInBackground("Guest", password: "GuestPassword", block: { (user, error) in
-            if ((user) != nil)
-            {
-                
+            if ((user) != nil) {
                 //remember user
                 NSUserDefaults.standardUserDefaults().setObject(user!.username, forKey: "username")
                 NSUserDefaults.standardUserDefaults().synchronize()
@@ -54,7 +38,6 @@ class WelcomeViewController: VideoSplashViewController {
                 //call login func
                 let appDelegate : AppDelegate = UIApplication.sharedApplication().delegate as!AppDelegate
                 appDelegate.login()
-                
                 
             }})
     }
@@ -77,17 +60,13 @@ class WelcomeViewController: VideoSplashViewController {
         
     }
 
-    
     @IBAction func logInAction(sender: UIButton) {
         print("button works")
         self.performSegueWithIdentifier("loginSegueID", sender: self)
     }
     
     @IBAction func signUpAction(sender: UIButton) {
-    self.performSegueWithIdentifier("signUpSegueID", sender: self)
-        
+        self.performSegueWithIdentifier("signUpSegueID", sender: self)
     }
-    
-
 }
 

@@ -30,16 +30,10 @@ class GuideCVC: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupViews()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setupViews()
-    }
-    
-    func setupViews(){
-//        outletForLike.addTarget(self, action: #selector(GuideCVC.likeButtonDidPress(_:)), forControlEvents: .TouchUpInside)
     }
     
     @IBAction func likeButtonDidPress(button: UIButton){

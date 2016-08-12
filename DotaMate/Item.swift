@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 class Item {
     var name:String!
     var itemLocalizedName:String!
@@ -19,16 +20,14 @@ class Item {
     var lore: String?
    
     init(name:String,itemLocalizedName:String, quality:String,itemId:Int,itemImageURL:String,cost: Int, description:String,notes:String,lore:String){
-    self.name = name
-    self.itemLocalizedName=itemLocalizedName
-    self.quality=quality
-    self.itemId=itemId
-    self.itemImageURL=itemImageURL
-    self.cost=cost
-    self.description=description
-    self.notes=notes
-    self.lore=lore
+        self.name = name
+        self.itemLocalizedName=itemLocalizedName
+        self.quality=quality
+        self.itemId=itemId
+        self.itemImageURL=itemImageURL
+        self.cost=cost
+        self.description=description
+        self.notes=notes
+        self.lore=lore
     }
-    
-
 }

@@ -10,7 +10,6 @@ import UIKit
 
 class ItemWithCellCVC: UICollectionViewCell {
     
-    
     @IBOutlet weak var itemImage: UIImageView!
     @IBOutlet weak var itemName: UILabel!
     var itemInCell: Item?

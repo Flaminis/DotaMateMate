@@ -8,6 +8,7 @@
 import Foundation
 
 class HeroDetail{
+    
     var hero:Hero
     var primaryAttribute:PrimaryAttribute
     var roles:[String]
@@ -27,6 +28,7 @@ class HeroDetail{
     var baseAttackLow:Double
     var baseAttackHigh:Double
     var abilities:[Ability]
+    
     init(hero:Hero,primaryAttribute:PrimaryAttribute,roles:[String], attackType:AttackType,baseStrength:Double,baseAgility:Double,baseIntelligence:Double,strengthIncrease:Double,agilityIncrease:Double,intelligenceIncrease:Double,movementSpeed:Double,turnRate:Double,sightRangeDay:Double,sightRangeNight:Double,attackRange:Double,baseArmor:Double,baseAttackLow:Double,baseAttackHigh:Double,abilities:[Ability]){
         self.hero = hero
         self.primaryAttribute = primaryAttribute

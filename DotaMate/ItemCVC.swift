@@ -7,9 +7,8 @@
 //
 
 import UIKit
+
 //id itemCellOverall
 class ItemCVC: UICollectionViewCell {
-    
     @IBOutlet weak var itemImage: UIImageView!
-    
 }

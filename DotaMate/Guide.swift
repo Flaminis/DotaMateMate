@@ -10,7 +10,6 @@ import Foundation
 import Parse
 
 class Guide: PFObject {
-//    @NSManaged var username: String
     @NSManaged var author: User
     @NSManaged var uuid: String
     @NSManaged var heroIconPic: PFFile
@@ -23,10 +22,6 @@ class Guide: PFObject {
     @NSManaged var items: String
     @NSManaged var guideNumOfViews: Int
     @NSManaged var username : String
-
-
-    
-    
     var userLiked: Bool = false
 }
 
@@ -72,13 +67,15 @@ extension Guide {
     }
     
     func like(closure: (NSError?) -> Void){
+        
         let like = Like()
         like.guide = self
         like.author = User.currentUser()!
+        
         like.saveInBackgroundWithBlock { (finished, error) in
-
             closure(error)
         }
+        
         self.guideLikes += 1
         
         self.saveInBackground()
@@ -102,10 +99,6 @@ extension Guide {
         
         self.guideLikes -= 1
         self.saveInBackground()
-        
-       
-
-
         userLiked = false
     }
 }

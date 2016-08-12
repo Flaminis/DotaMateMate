@@ -29,19 +29,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         gai.trackUncaughtExceptions = true  // report uncaught exceptions
 //        gai.logger.logLevel = GAILogLevel.Verbose  // remove before app release
         
-        
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         
         Parse.enableLocalDatastore()
+        
         Parse.initializeWithConfiguration( ParseClientConfiguration { (config: ParseMutableClientConfiguration) -> Void in
             config.applicationId = ParseSettings.applicationId
             config.clientKey = ParseSettings.clientKey
             config.server = ParseSettings.server
         })
+        
         registerClasses()
         login()
         
         let cache = KingfisherManager.sharedManager.cache
+        
         cache.calculateDiskCacheSizeWithCompletionHandler { (size) -> () in
             print("disk size in bytes: \(size)")
         }
@@ -49,12 +51,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    
-    
     func registerClasses(){
         User.registerSubclass()
         Guide.registerSubclass()
     }
+    
     func login() {
         if let user = User.currentUser() {
             print("\(#function) -> \(user.username)")
@@ -64,7 +65,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.rootViewController = myTabBar
         }
     }
-
-
 }
 

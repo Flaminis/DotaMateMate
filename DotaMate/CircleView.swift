@@ -9,6 +9,7 @@
 import UIKit
 
 class CircleView: UIView {
+    
     var circleLayer: CAShapeLayer!
     
     override init(frame: CGRect) {
@@ -38,6 +39,7 @@ class CircleView: UIView {
         super.init(coder: aDecoder)
         fatalError("init(coder:) has not been implemented")
     }
+    
     func addCircleView() {
         let diceRoll = CGFloat(Int(arc4random_uniform(7))*50)
         let circleWidth = CGFloat(200)

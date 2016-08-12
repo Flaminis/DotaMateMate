@@ -12,13 +12,10 @@ class NavVC: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-//        self.navigationBar.tintColor = .whiteColor()
-
         self.navigationBar.barTintColor = UIColor(red:39/255, green:42/255, blue:47/255, alpha: 1)
-       self.navigationBar.translucent = true
-    
+        self.navigationBar.translucent = true
     }
+    
     override func preferredStatusBarStyle() -> UIStatusBarStyle{
         return UIStatusBarStyle.LightContent
     }

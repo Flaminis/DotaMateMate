@@ -17,34 +17,18 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        if textField == self.emailField {
-            self.passwordField.becomeFirstResponder()
-        }
-        if textField == self.passwordField {
-            self.usernameField.becomeFirstResponder()
-        }
-        if textField == self.usernameField {
-            self.steamIDField.becomeFirstResponder()
-        }
-        if textField == self.steamIDField {
-            self.steamIDField.resignFirstResponder()
-
-        }
-        
+        textField.resignFirstResponder()
         return true
     }
-    
 
     @IBAction func fromEmailToNext(sender: UITextField) {
-    textFieldShouldReturn(sender)
-        
-    
+        textFieldShouldReturn(sender)
     }
     
     @IBAction func fromPasswordToNext(sender: UITextField) {
         textFieldShouldReturn(sender)
-        
     }
+    
     @IBAction func fromUsernameToNext(sender: UITextField) {
         textFieldShouldReturn(sender)
     }
@@ -65,24 +49,16 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        emailField.attributedPlaceholder =
-            NSAttributedString(string: "Email  *", attributes: [NSForegroundColorAttributeName : UIColor.grayColor()])
-        passwordField.attributedPlaceholder =
-            NSAttributedString(string: "Choose your password    *", attributes: [NSForegroundColorAttributeName : UIColor.grayColor()])
-        usernameField.attributedPlaceholder =
-            NSAttributedString(string: "Choose your username    *", attributes: [NSForegroundColorAttributeName : UIColor.grayColor()])
-        steamIDField.attributedPlaceholder =
-            NSAttributedString(string: "SteamID (Optional)", attributes: [NSForegroundColorAttributeName : UIColor.grayColor()])
-        
+        emailField.attributedPlaceholder = NSAttributedString(string: "Email  *", attributes: [NSForegroundColorAttributeName : UIColor.grayColor()])
+        passwordField.attributedPlaceholder = NSAttributedString(string: "Choose your password    *", attributes: [NSForegroundColorAttributeName : UIColor.grayColor()])
+        usernameField.attributedPlaceholder = NSAttributedString(string: "Choose your username    *", attributes: [NSForegroundColorAttributeName : UIColor.grayColor()])
+        steamIDField.attributedPlaceholder = NSAttributedString(string: "SteamID (Optional)", attributes: [NSForegroundColorAttributeName : UIColor.grayColor()])
 
-        
-        
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.hideKeyboard))
         tapGesture.cancelsTouchesInView = true
         self.view.addGestureRecognizer(tapGesture)
 
         //tap for image
-       
         avatarTap.layer.cornerRadius = avatarTap.frame.size.height/2
         avatarTap.clipsToBounds = true
         avatarTap.image = UIImage(named: "DotaMateLOgo")!
@@ -91,24 +67,11 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         avaTap.numberOfTapsRequired = 1
         avatarTap.userInteractionEnabled = true
         avatarTap.addGestureRecognizer(avaTap)
-        
-        
-        
-        
-        
-        
-        
-        
-        
-               
-        
-        
     }
     
-    
     //MARK: PickerImage
-    func loadImg(recognizer: UITapGestureRecognizer)
-    {
+    func loadImg(recognizer: UITapGestureRecognizer) {
+        
         let picker = UIImagePickerController()
         
         picker.delegate = self
@@ -117,14 +80,13 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         presentViewController(picker, animated: true, completion: nil)
     }
+    
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         
         avatarTap.image = info[UIImagePickerControllerEditedImage] as? UIImage
         
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-    
-    
     
     func hideKeyboard() {
         self.view.endEditing(true)
@@ -135,27 +97,24 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         // Dispose of any resources that can be recreated.
     }
     
-
    //MARK: Actions
     @IBAction func signUpButtonAction(sender: UIButton) {
         
         self.view.endEditing(true)
-        
-        
+
         let username = self.usernameField.text
         let password = self.passwordField.text
         let email = self.emailField.text
         let steamIDField = self.steamIDField.text
         
-        if((username?.utf16.count<4) || (password?.utf16.count<4))
-        {
-           
+        if((username?.characters.count<4) || (password?.characters.count<4)) {
+            
             let alert = UIAlertController(title: "Invalid!", message:"Username and Password must be longer than 4 charachters", preferredStyle: .Alert)
             alert.addAction(UIAlertAction(title: "OK", style: .Default) { _ in })
             self.presentViewController(alert, animated: true){}
-            
-        }
-        else {
+        
+        } else {
+          
             //spin it babe
             SwiftSpinner.show("Placing Wards!")
             
@@ -176,47 +135,28 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
             
             newUser.signUpInBackgroundWithBlock({ (succeed, error) in
                
-                if ((error) != nil)
-                {    SwiftSpinner.hide()
+                if ((error) != nil){
+                    
+                    SwiftSpinner.hide()
                     //error
                     let alert = UIAlertController(title: "Error!", message: error?.localizedDescription, preferredStyle: .Alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .Default) { _ in })
                     self.presentViewController(alert, animated: true){}
+        
+                } else {
+                 
+                    SwiftSpinner.hide()
 
-                    
-                }
-                else {
-                     SwiftSpinner.hide()
-                  
-               
-                    
                     //remember logged user
                     NSUserDefaults.standardUserDefaults().setObject(newUser.username, forKey: "username")
                     NSUserDefaults.standardUserDefaults().synchronize()
-                    
                     
                     //call login func from AppDelegate class & open up
                     let appDelegate : AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
                     appDelegate.login()
                     
-                  
                 }
-            
-            
-            
             })
         }
-       
-
-        
-        
-        
-        
-        
-        
-        
-        
-        
     }
-
 }

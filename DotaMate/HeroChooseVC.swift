@@ -23,6 +23,7 @@ class HeroChooseVC: UIViewController, UICollectionViewDataSource, UICollectionVi
             }
         }
     }
+    
     var heroesFiltered = [Hero]() {
         didSet {
             dispatch_async(dispatch_get_main_queue()) {
@@ -30,34 +31,33 @@ class HeroChooseVC: UIViewController, UICollectionViewDataSource, UICollectionVi
             }
         }
     }
+    
     var contentList: [Hero] {
         return searchBarActive ? heroesFiltered : heroes
     }
+    
     var searchBarActive: Bool = false
     var searchBarBoundsY: CGFloat?
     var searchBar: UISearchBar?
     
-    
     let reuseIdentifier = "heroCollectionCell"
+    
     @IBOutlet weak var heroCollectionView: UICollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //let notificationCenter = NSNotificationCenter.defaultCenter()
-        //notificationCenter.addObserver(self, selector: #selector(self.appMovedToBackground), name: UIApplicationWillResignActiveNotification, object: nil)
-        // searchBar?.backgroundColor = UIColor.blueColor()
+        
         downloadHeroesFromAPI()
+        
         //tap
         let tapGesture = UILongPressGestureRecognizer(target: self, action: #selector(self.hideKeyboard))
         tapGesture.cancelsTouchesInView = true
         view.addGestureRecognizer(tapGesture)
-
+        
         // pull to refresh
         refresher = UIRefreshControl()
         refresher.addTarget(self, action: #selector(profileVC.refresh), forControlEvents: UIControlEvents.ValueChanged)
         heroCollectionView?.addSubview(refresher)
-        
-        //distance
         
         SwiftSpinner.hide()
     }
@@ -66,7 +66,6 @@ class HeroChooseVC: UIViewController, UICollectionViewDataSource, UICollectionVi
         super.viewDidAppear(true)
         addSearchBar()
         self.view.layoutSubviews()
-
     }
     
     func appMovedToBackground(){
@@ -74,6 +73,7 @@ class HeroChooseVC: UIViewController, UICollectionViewDataSource, UICollectionVi
         cache.calculateDiskCacheSizeWithCompletionHandler { (size) -> () in
             print("disk size in bytes: \(size/1024/1204)mb")
         }
+        
         cache.clearMemoryCache()
         cache.clearDiskCache()
         cache.calculateDiskCacheSizeWithCompletionHandler { (size) -> () in
@@ -95,6 +95,7 @@ class HeroChooseVC: UIViewController, UICollectionViewDataSource, UICollectionVi
         
         flowLayout.itemSize = CGSize(width: width, height: height)
     }
+    
     //refresh on pull
     func refresh() {
         heroCollectionView?.reloadData()
@@ -105,30 +106,26 @@ class HeroChooseVC: UIViewController, UICollectionViewDataSource, UICollectionVi
         self.view.endEditing(true)
     }
     
-
     // MARK: CollectionView implementing
 
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    func collectionView(collectionView: UICollectionView,
-                        numberOfItemsInSection section: Int) -> Int {
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return contentList.count
     }
     
-    func collectionView(collectionView: UICollectionView,
-                        cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! HeroChooseCVC
         
         let hero = contentList[indexPath.row]
+        
         cell.hero = hero
         cell.heroNameLabel.text = hero.heroLocalizedName
-       
-        
         
         if let herolargeImageURL = hero.largeImageURL {
-          
             cell.heroIconImage.kf_setImageWithURL(NSURL(string: herolargeImageURL)!,  optionsInfo: [.Transition(ImageTransition.Fade(0.6))])
         }
         
@@ -136,15 +133,18 @@ class HeroChooseVC: UIViewController, UICollectionViewDataSource, UICollectionVi
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
         let destVC = segue.destinationViewController as! GuideMakerViewController
         if let cell = sender as? HeroChooseCVC {
             destVC.hero = cell.hero
         }
+    
     }
     
     func downloadHeroesFromAPI() {
-        Alamofire.request(.GET, "http://api.steampowered.com/IEconDOTA2_570/GetHeroes/v0001/?key=A041063D0F9386FD666F26E04598C9D0",parameters: ["language":"en-us"],encoding: .URL).validate().responseJSON(){
-            response in
+        
+        Alamofire.request(.GET, "http://api.steampowered.com/IEconDOTA2_570/GetHeroes/v0001/?key=A041063D0F9386FD666F26E04598C9D0",parameters: ["language":"en-us"],encoding: .URL).validate().responseJSON(){ response in
+            
             if !response.result.isSuccess {
                 print("Error while fetching Heroes list : \(response.result.error)")
                 return
@@ -163,12 +163,11 @@ class HeroChooseVC: UIViewController, UICollectionViewDataSource, UICollectionVi
                 return
             }
             
-            self.heroes = apiHeroes
-                .flatMap {
+            self.heroes = apiHeroes.flatMap {
+                
                     guard let id = $0["id"] as? Int,
-                        let localizedName = $0["localized_name"] as? String,
-                        let name = $0["name"] as? String else { return nil }
-                    
+                    let localizedName = $0["localized_name"] as? String,
+                    let name = $0["name"] as? String else { return nil }
                     let imageHeroName = name.stringByReplacingOccurrencesOfString("npc_dota_hero_", withString: "")
                     let largeURL = "http://cdn.dota2.com/apps/dota2/images/heroes/\(imageHeroName)_lg.png"
                     let smallURL = "http://media.steampowered.com/apps/dota2/images/heroes/\(imageHeroName)_sb.png"
@@ -176,9 +175,12 @@ class HeroChooseVC: UIViewController, UICollectionViewDataSource, UICollectionVi
                     
                     return Hero(heroDotaName: name.stringByReplacingOccurrencesOfString("npc_dota_hero_", withString: ""), heroLocalizedName: localizedName, heroID: id,largeImageURL: largeURL,smallImageURL: smallURL,portraitImageURL: portraitURL)
                 }
-                .sort { $0.heroLocalizedName < $1.heroLocalizedName }
+            .sort { $0.heroLocalizedName < $1.heroLocalizedName }
         }
     }
+    
+    
+    //TODO: Refactor to a different class so it can be reusuable in the future if need be and free up space in the VC
     
     // MARK: SearchBar Delegate method
     
@@ -217,9 +219,10 @@ class HeroChooseVC: UIViewController, UICollectionViewDataSource, UICollectionVi
     }
     
     // MARK: Add Search Bar
-    
-    func addSearchBar(){
+    func addSearchBar() {
+        
         if searchBar != nil { return }
+        
         searchBarBoundsY = navigationController!.navigationBar.frame.size.height + UIApplication.sharedApplication().statusBarFrame.size.height
         searchBar = UISearchBar()
         searchBar?.searchBarStyle = .Default
@@ -229,7 +232,6 @@ class HeroChooseVC: UIViewController, UICollectionViewDataSource, UICollectionVi
         searchBar?.delegate = self
       
         navigationItem.titleView = searchBar
-        
         searchBar?.anchorInCenter(width: 300, height: 44)
     }
 }

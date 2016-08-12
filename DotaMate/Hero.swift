@@ -20,6 +20,7 @@ struct Hero {
 }
 
 extension Hero {
+    
     init(heroDotaName:String, heroLocalizedName:String, heroID:Int? = nil,largeImageURL:String,smallImageURL:String,portraitImageURL:String){
         self.heroDotaName = heroDotaName
         self.heroLocalizedName = heroLocalizedName

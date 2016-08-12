@@ -8,12 +8,22 @@
 
 import Foundation
 
+//TODO: Read Paragraph
+
+/*
+ Alot of things can be fixed in this file things such as
+ alert presenting strings to constant url and placeholder
+ on the textboxes and other things I saw around doing with
+ heroes (looked like a hero enum somewhere)
+*/
+
 struct ParseClass {
     static let Guide = "Guide"
     static let User = "_User"
     static let Hero = "Hero"
     static let Like = "likes"
 }
+
 struct ParseSettings {
     static let applicationId = "DotaMate"
     static let clientKey = "abc123"
