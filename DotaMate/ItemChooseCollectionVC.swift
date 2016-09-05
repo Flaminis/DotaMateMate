@@ -66,6 +66,7 @@ class ItemChooseCollectionVC: UICollectionViewController {
         
         if let itemImageURL = item.itemImageURL {
             cell.itemImage.kf_setImageWithURL(NSURL(string: itemImageURL)!, optionsInfo: [.Transition(ImageTransition.Fade(0.6))])
+            
         }
         
         return cell

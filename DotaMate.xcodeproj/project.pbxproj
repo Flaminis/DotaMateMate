@@ -144,6 +144,7 @@
 		2714E07E1D3375FB00CF38DB /* GuideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2714E07D1D3375FB00CF38DB /* GuideTableViewCell.swift */; };
 		2714E0821D33A43700CF38DB /* Guide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2714E0811D33A43700CF38DB /* Guide.swift */; };
 		2714E0841D33A47200CF38DB /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2714E0831D33A47200CF38DB /* Hero.swift */; };
+		2715699D1D76F01D008F5814 /* Underlord.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2715699C1D76F01D008F5814 /* Underlord.mp3 */; };
 		2723FC891D3449AF0093F4AB /* resetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2723FC881D3449AF0093F4AB /* resetPasswordVC.swift */; };
 		2723FC8B1D34BA700093F4AB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2723FC8A1D34BA700093F4AB /* ProfileViewController.swift */; };
 		2723FC8D1D34BA950093F4AB /* headerForProfileV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2723FC8C1D34BA950093F4AB /* headerForProfileV.swift */; };
@@ -303,6 +304,7 @@
 		2714E07D1D3375FB00CF38DB /* GuideTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideTableViewCell.swift; sourceTree = "<group>"; };
 		2714E0811D33A43700CF38DB /* Guide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Guide.swift; sourceTree = "<group>"; };
 		2714E0831D33A47200CF38DB /* Hero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
+		2715699C1D76F01D008F5814 /* Underlord.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Underlord.mp3; sourceTree = "<group>"; };
 		2723FC881D3449AF0093F4AB /* resetPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = resetPasswordVC.swift; sourceTree = "<group>"; };
 		2723FC8A1D34BA700093F4AB /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		2723FC8C1D34BA950093F4AB /* headerForProfileV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = headerForProfileV.swift; sourceTree = "<group>"; };
@@ -345,6 +347,7 @@
 				2700479F1D3676730076BC6B /* Abaddon.mp3 */,
 				270047A01D3676730076BC6B /* Alchemist.mp3 */,
 				270047A11D3676730076BC6B /* Ancient Apparition.mp3 */,
+				2715699C1D76F01D008F5814 /* Underlord.mp3 */,
 				270047A21D3676730076BC6B /* Anti-Mage.mp3 */,
 				270047A31D3676730076BC6B /* Arc Warden.mp3 */,
 				270047A41D3676730076BC6B /* Axe.mp3 */,
@@ -774,6 +777,7 @@
 				2700483C1D3676730076BC6B /* Lifestealer.mp3 in Resources */,
 				270048211D3676730076BC6B /* Clockwerk.mp3 in Resources */,
 				2700486D1D3676730076BC6B /* Tiny.mp3 in Resources */,
+				2715699D1D76F01D008F5814 /* Underlord.mp3 in Resources */,
 				270048361D3676730076BC6B /* Juggernaut.mp3 in Resources */,
 				270048341D3676730076BC6B /* Io.mp3 in Resources */,
 				270048321D3676730076BC6B /* Huskar.mp3 in Resources */,

@@ -250,6 +250,7 @@ extension profileVC: GuideCVCDelegate {
     
     func deleteGuide(guide: Guide){
         let currentGuide = guide
+        
         currentGuide.deleteEventually()
         loadGuides()
         self.collectionView!.reloadData()
