@@ -115,7 +115,9 @@ class TimerViewController: UIViewController {
         
         NSTimer.every(1.seconds) {
             guard let time = self.startTime else {return}
+            
             self.elapsedTime = CFAbsoluteTimeGetCurrent() - time
+            
             self.counter = Int(self.elapsedTime)
         }
     }
@@ -179,9 +181,9 @@ class TimerViewController: UIViewController {
         if (((seconds % 3600) % 60)==0) {
             retTxt.appendContentsOf("0")
         
-        } else if (((seconds % 3600) % 60)<10) {
+        } else if (((seconds % 3600) % 60) < 10) {
             retTxt=("\((seconds % 3600) / 60):0\((seconds % 3600) % 60)")
-        
+    
         }
         
         if (seconds<=1) {
