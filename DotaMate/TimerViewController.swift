@@ -25,7 +25,7 @@ class TimerViewController: UIViewController {
     @IBOutlet weak var aegisGotawayLabel: UILabel!
     @IBOutlet weak var aegisFirstTimeLabel: UILabel!
     var elapsedTime : CFAbsoluteTime!
-    var startTime: CFAbsoluteTime!
+    var startTime : CFAbsoluteTime!
     var timeAtPress: NSDate!
 
     var backgroundTaskIdentifier: UIBackgroundTaskIdentifier?
@@ -62,7 +62,8 @@ class TimerViewController: UIViewController {
     var earlyRosh = 480{
         didSet{
             
-            if ((earlyRosh>0) && (earlyRosh != 480)){
+            if ((earlyRosh > 0) && (earlyRosh != 480)){
+                
                 aegisFirstTimeLabel.text=secondsToHoursMinutesSeconds(earlyRosh)
                 animateCircle(1,toThePoint: ((1-(CGFloat(earlyRosh)/480))),amountOfTime:0.6 )
             
@@ -191,7 +192,7 @@ class TimerViewController: UIViewController {
         }
         
      return retTxt
-}
+    }
 
     @IBAction func TimerPressed(sender: UIButton) {
         

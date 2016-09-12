@@ -27,6 +27,12 @@ class profileVC: UICollectionViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        AppService.sharedInstance.getSearchResults("Graphs", success: { (result) in
+            
+        }) { (result) in
+            
+        }
 
         collectionView?.backgroundColor = .whiteColor()
         

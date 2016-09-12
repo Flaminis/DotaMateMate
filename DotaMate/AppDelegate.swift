@@ -48,6 +48,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("disk size in bytes: \(size)")
         }
         
+        AppService.sharedInstance.setup()
+        
         return true
     }
     

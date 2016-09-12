@@ -161,6 +161,76 @@
 		27CEB4EE1D4AB2740071FDB4 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CEB4ED1D4AB2740071FDB4 /* ImageCache.swift */; };
 		27D41B511D4E848C001E2705 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D41B501D4E848C001E2705 /* TimerViewController.swift */; };
 		27F53F321D418A50009368D9 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F53F311D418A50009368D9 /* CircleView.swift */; };
+		C7018BB91D7DFF3300CE2961 /* DotaMateApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7018BB81D7DFF3300CE2961 /* DotaMateApi.swift */; };
+		C7018BBB1D7DFFF100CE2961 /* DotaMateApiResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7018BBA1D7DFFF100CE2961 /* DotaMateApiResources.swift */; };
+		C7018BBD1D7E051300CE2961 /* AppService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7018BBC1D7E051300CE2961 /* AppService.swift */; };
+		C7018BC01D7E094200CE2961 /* ApiUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7018BBF1D7E094200CE2961 /* ApiUser.swift */; };
+		C7018BC31D7E162900CE2961 /* UserSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7018BC21D7E162900CE2961 /* UserSearchTableViewController.swift */; };
+		C7018BC61D7E176600CE2961 /* UserSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7018BC51D7E176600CE2961 /* UserSearchTableViewCell.swift */; };
+		C72834591D862E7B00103E83 /* MatchDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72834581D862E7B00103E83 /* MatchDetailsViewController.swift */; };
+		C72834601D863D6400103E83 /* MatchDetailsPlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C728345E1D863D6400103E83 /* MatchDetailsPlayerTableViewCell.swift */; };
+		C72834611D863D6400103E83 /* MatchDetailsPlayerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C728345F1D863D6400103E83 /* MatchDetailsPlayerTableViewCell.xib */; };
+		C72834661D86469800103E83 /* DMMmrEstimate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72834631D86469800103E83 /* DMMmrEstimate.swift */; };
+		C72834671D86469800103E83 /* DMPlayerProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72834641D86469800103E83 /* DMPlayerProfile.swift */; };
+		C72834681D86469800103E83 /* DMProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72834651D86469800103E83 /* DMProfile.swift */; };
+		C728346D1D864C0A00103E83 /* DMItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = C728346A1D864C0A00103E83 /* DMItems.swift */; };
+		C728346E1D864C0A00103E83 /* DMItemsSteamAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C728346B1D864C0A00103E83 /* DMItemsSteamAPI.swift */; };
+		C728346F1D864C0A00103E83 /* DMResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C728346C1D864C0A00103E83 /* DMResult.swift */; };
+		C728347A1D8651F800103E83 /* DMHeroes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72834771D8651F800103E83 /* DMHeroes.swift */; };
+		C728347B1D8651F800103E83 /* DMHeroesSteamAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72834781D8651F800103E83 /* DMHeroesSteamAPI.swift */; };
+		C728347C1D8651F800103E83 /* DMResultHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72834791D8651F800103E83 /* DMResultHero.swift */; };
+		C728347E1D866C6400103E83 /* UIColorFromHexExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C728347D1D866C6400103E83 /* UIColorFromHexExtension.swift */; };
+		C747FF031D862C1F00896A24 /* PlayerProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C747FF021D862C1F00896A24 /* PlayerProfile.storyboard */; };
+		C7DAC5211D86249100393519 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC5201D86249100393519 /* Match.swift */; };
+		C7DAC5231D86252200393519 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC5221D86252200393519 /* Player.swift */; };
+		C7DAC5DA1D8626D600393519 /* DMAbilityUpgradesArr.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC5641D8626D600393519 /* DMAbilityUpgradesArr.swift */; };
+		C7DAC5DB1D8626D600393519 /* DMAbilityUses.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC5651D8626D600393519 /* DMAbilityUses.swift */; };
+		C7DAC5DD1D8626D600393519 /* DMAdditionalUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC5671D8626D600393519 /* DMAdditionalUnits.swift */; };
+		C7DAC5DE1D8626D600393519 /* DMAllWordCounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC5681D8626D600393519 /* DMAllWordCounts.swift */; };
+		C7DAC5DF1D8626D600393519 /* DMBenchmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC5691D8626D600393519 /* DMBenchmarks.swift */; };
+		C7DAC5E01D8626D600393519 /* DMBuybackLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC56A1D8626D600393519 /* DMBuybackLog.swift */; };
+		C7DAC5E11D8626D600393519 /* DMChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC56B1D8626D600393519 /* DMChat.swift */; };
+		C7DAC5E31D8626D600393519 /* DMDamage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC56D1D8626D600393519 /* DMDamage.swift */; };
+		C7DAC5E41D8626D600393519 /* DMDamageInflictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC56E1D8626D600393519 /* DMDamageInflictor.swift */; };
+		C7DAC5E51D8626D600393519 /* DMDamageInflictorReceived.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC56F1D8626D600393519 /* DMDamageInflictorReceived.swift */; };
+		C7DAC5E61D8626D600393519 /* DMDamageTaken.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC5701D8626D600393519 /* DMDamageTaken.swift */; };
+		C7DAC5E81D8626D600393519 /* DMDnT.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC5721D8626D600393519 /* DMDnT.swift */; };
+		C7DAC5E91D8626D600393519 /* DMFirstPurchaseTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC5731D8626D600393519 /* DMFirstPurchaseTime.swift */; };
+		C7DAC5EA1D8626D600393519 /* DMGoldPerMin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC5741D8626D600393519 /* DMGoldPerMin.swift */; };
+		C7DAC5EC1D8626D600393519 /* DMGoldT.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC5761D8626D600393519 /* DMGoldT.swift */; };
+		C7DAC5ED1D8626D600393519 /* DMHeroDamagePerMin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC5771D8626D600393519 /* DMHeroDamagePerMin.swift */; };
+		C7DAC5EE1D8626D600393519 /* DMHeroHealingPerMin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC5781D8626D600393519 /* DMHeroHealingPerMin.swift */; };
+		C7DAC5EF1D8626D600393519 /* DMHeroHits.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC5791D8626D600393519 /* DMHeroHits.swift */; };
+		C7DAC5F01D8626D600393519 /* DMItemUsage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC57A1D8626D600393519 /* DMItemUsage.swift */; };
+		C7DAC5F11D8626D600393519 /* DMItemUses.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC57B1D8626D600393519 /* DMItemUses.swift */; };
+		C7DAC5F21D8626D600393519 /* DMItemWin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC57C1D8626D600393519 /* DMItemWin.swift */; };
+		C7DAC5F31D8626D600393519 /* DMKilled.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC57D1D8626D600393519 /* DMKilled.swift */; };
+		C7DAC5F41D8626D600393519 /* DMKilledBy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC57E1D8626D600393519 /* DMKilledBy.swift */; };
+		C7DAC5F51D8626D600393519 /* DMKillsLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC57F1D8626D600393519 /* DMKillsLog.swift */; };
+		C7DAC5F61D8626D600393519 /* DMKillsPerMin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC5801D8626D600393519 /* DMKillsPerMin.swift */; };
+		C7DAC5F81D8626D600393519 /* DMLanePos.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC5821D8626D600393519 /* DMLanePos.swift */; };
+		C7DAC5F91D8626D600393519 /* DMLastHitsPerMin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC5831D8626D600393519 /* DMLastHitsPerMin.swift */; };
+		C7DAC5FA1D8626D600393519 /* DMLhT.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC5841D8626D600393519 /* DMLhT.swift */; };
+		C7DAC5FC1D8626D600393519 /* DMMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC5861D8626D600393519 /* DMMatch.swift */; };
+		C7DAC5FD1D8626D600393519 /* DMMaxHeroHit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC5871D8626D600393519 /* DMMaxHeroHit.swift */; };
+		C7DAC5FF1D8626D600393519 /* DMMyWordCounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC5891D8626D600393519 /* DMMyWordCounts.swift */; };
+		C7DAC6001D8626D600393519 /* DMObjectives.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC58A1D8626D600393519 /* DMObjectives.swift */; };
+		C7DAC6011D8626D600393519 /* DMObs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC58B1D8626D600393519 /* DMObs.swift */; };
+		C7DAC6021D8626D600393519 /* DMObsLeftLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC58C1D8626D600393519 /* DMObsLeftLog.swift */; };
+		C7DAC6031D8626D600393519 /* DMObsLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC58D1D8626D600393519 /* DMObsLog.swift */; };
+		C7DAC6051D8626D600393519 /* DMPlayers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC58F1D8626D600393519 /* DMPlayers.swift */; };
+		C7DAC6061D8626D600393519 /* DMPosData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC5901D8626D600393519 /* DMPosData.swift */; };
+		C7DAC6071D8626D600393519 /* DMPurchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC5911D8626D600393519 /* DMPurchase.swift */; };
+		C7DAC6081D8626D600393519 /* DMPurchaseLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC5921D8626D600393519 /* DMPurchaseLog.swift */; };
+		C7DAC6091D8626D600393519 /* DMPurchaseTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC5931D8626D600393519 /* DMPurchaseTime.swift */; };
+		C7DAC60C1D8626D600393519 /* DMSenLeftLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC5961D8626D600393519 /* DMSenLeftLog.swift */; };
+		C7DAC60D1D8626D600393519 /* DMSenLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC5971D8626D600393519 /* DMSenLog.swift */; };
+		C7DAC60E1D8626D600393519 /* DMSpecific.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC5981D8626D600393519 /* DMSpecific.swift */; };
+		C7DAC60F1D8626D600393519 /* DMTeamfights.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC5991D8626D600393519 /* DMTeamfights.swift */; };
+		C7DAC6101D8626D600393519 /* DMTimes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC59A1D8626D600393519 /* DMTimes.swift */; };
+		C7DAC6111D8626D600393519 /* DMTowerDamage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC59B1D8626D600393519 /* DMTowerDamage.swift */; };
+		C7DAC6121D8626D600393519 /* DMXpPerMin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC59C1D8626D600393519 /* DMXpPerMin.swift */; };
+		C7DAC6141D8626D600393519 /* DMXpT.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DAC59E1D8626D600393519 /* DMXpT.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -323,6 +393,76 @@
 		27F53F311D418A50009368D9 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		8CD6F1AE1E317E80A4987F8D /* Pods-DotaMate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DotaMate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DotaMate/Pods-DotaMate.debug.xcconfig"; sourceTree = "<group>"; };
 		BC076D76B03761F78E8AE66C /* Pods_DotaMate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DotaMate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7018BB81D7DFF3300CE2961 /* DotaMateApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotaMateApi.swift; sourceTree = "<group>"; };
+		C7018BBA1D7DFFF100CE2961 /* DotaMateApiResources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotaMateApiResources.swift; sourceTree = "<group>"; };
+		C7018BBC1D7E051300CE2961 /* AppService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppService.swift; sourceTree = "<group>"; };
+		C7018BBF1D7E094200CE2961 /* ApiUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiUser.swift; sourceTree = "<group>"; };
+		C7018BC21D7E162900CE2961 /* UserSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSearchTableViewController.swift; sourceTree = "<group>"; };
+		C7018BC51D7E176600CE2961 /* UserSearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSearchTableViewCell.swift; sourceTree = "<group>"; };
+		C72834581D862E7B00103E83 /* MatchDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchDetailsViewController.swift; sourceTree = "<group>"; };
+		C728345E1D863D6400103E83 /* MatchDetailsPlayerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchDetailsPlayerTableViewCell.swift; sourceTree = "<group>"; };
+		C728345F1D863D6400103E83 /* MatchDetailsPlayerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MatchDetailsPlayerTableViewCell.xib; sourceTree = "<group>"; };
+		C72834631D86469800103E83 /* DMMmrEstimate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMMmrEstimate.swift; path = ../../Documents/swiftyJsonGenerated/playerProfile/DMMmrEstimate.swift; sourceTree = "<group>"; };
+		C72834641D86469800103E83 /* DMPlayerProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMPlayerProfile.swift; path = ../../Documents/swiftyJsonGenerated/playerProfile/DMPlayerProfile.swift; sourceTree = "<group>"; };
+		C72834651D86469800103E83 /* DMProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMProfile.swift; path = ../../Documents/swiftyJsonGenerated/playerProfile/DMProfile.swift; sourceTree = "<group>"; };
+		C728346A1D864C0A00103E83 /* DMItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMItems.swift; path = ../../Documents/swiftyJsonGenerated/playerProfile/items/DMItems.swift; sourceTree = "<group>"; };
+		C728346B1D864C0A00103E83 /* DMItemsSteamAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMItemsSteamAPI.swift; path = ../../Documents/swiftyJsonGenerated/playerProfile/items/DMItemsSteamAPI.swift; sourceTree = "<group>"; };
+		C728346C1D864C0A00103E83 /* DMResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMResult.swift; path = ../../Documents/swiftyJsonGenerated/playerProfile/items/DMResult.swift; sourceTree = "<group>"; };
+		C72834771D8651F800103E83 /* DMHeroes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMHeroes.swift; path = ../../Documents/swiftyJsonGenerated/playerProfile/items/heroes/DMHeroes.swift; sourceTree = "<group>"; };
+		C72834781D8651F800103E83 /* DMHeroesSteamAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMHeroesSteamAPI.swift; path = ../../Documents/swiftyJsonGenerated/playerProfile/items/heroes/DMHeroesSteamAPI.swift; sourceTree = "<group>"; };
+		C72834791D8651F800103E83 /* DMResultHero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMResultHero.swift; path = ../../Documents/swiftyJsonGenerated/playerProfile/items/heroes/DMResultHero.swift; sourceTree = "<group>"; };
+		C728347D1D866C6400103E83 /* UIColorFromHexExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColorFromHexExtension.swift; path = ../../Documents/SportsFanaticsInc/BurnBet/BurnBet/UIColorFromHexExtension.swift; sourceTree = "<group>"; };
+		C747FF021D862C1F00896A24 /* PlayerProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PlayerProfile.storyboard; sourceTree = "<group>"; };
+		C7DAC5201D86249100393519 /* Match.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
+		C7DAC5221D86252200393519 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		C7DAC5641D8626D600393519 /* DMAbilityUpgradesArr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMAbilityUpgradesArr.swift; path = ../../Documents/swiftyJsonGenerated/DMAbilityUpgradesArr.swift; sourceTree = "<group>"; };
+		C7DAC5651D8626D600393519 /* DMAbilityUses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMAbilityUses.swift; path = ../../Documents/swiftyJsonGenerated/DMAbilityUses.swift; sourceTree = "<group>"; };
+		C7DAC5671D8626D600393519 /* DMAdditionalUnits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMAdditionalUnits.swift; path = ../../Documents/swiftyJsonGenerated/DMAdditionalUnits.swift; sourceTree = "<group>"; };
+		C7DAC5681D8626D600393519 /* DMAllWordCounts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMAllWordCounts.swift; path = ../../Documents/swiftyJsonGenerated/DMAllWordCounts.swift; sourceTree = "<group>"; };
+		C7DAC5691D8626D600393519 /* DMBenchmarks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMBenchmarks.swift; path = ../../Documents/swiftyJsonGenerated/DMBenchmarks.swift; sourceTree = "<group>"; };
+		C7DAC56A1D8626D600393519 /* DMBuybackLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMBuybackLog.swift; path = ../../Documents/swiftyJsonGenerated/DMBuybackLog.swift; sourceTree = "<group>"; };
+		C7DAC56B1D8626D600393519 /* DMChat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMChat.swift; path = ../../Documents/swiftyJsonGenerated/DMChat.swift; sourceTree = "<group>"; };
+		C7DAC56D1D8626D600393519 /* DMDamage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMDamage.swift; path = ../../Documents/swiftyJsonGenerated/DMDamage.swift; sourceTree = "<group>"; };
+		C7DAC56E1D8626D600393519 /* DMDamageInflictor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMDamageInflictor.swift; path = ../../Documents/swiftyJsonGenerated/DMDamageInflictor.swift; sourceTree = "<group>"; };
+		C7DAC56F1D8626D600393519 /* DMDamageInflictorReceived.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMDamageInflictorReceived.swift; path = ../../Documents/swiftyJsonGenerated/DMDamageInflictorReceived.swift; sourceTree = "<group>"; };
+		C7DAC5701D8626D600393519 /* DMDamageTaken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMDamageTaken.swift; path = ../../Documents/swiftyJsonGenerated/DMDamageTaken.swift; sourceTree = "<group>"; };
+		C7DAC5721D8626D600393519 /* DMDnT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMDnT.swift; path = ../../Documents/swiftyJsonGenerated/DMDnT.swift; sourceTree = "<group>"; };
+		C7DAC5731D8626D600393519 /* DMFirstPurchaseTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMFirstPurchaseTime.swift; path = ../../Documents/swiftyJsonGenerated/DMFirstPurchaseTime.swift; sourceTree = "<group>"; };
+		C7DAC5741D8626D600393519 /* DMGoldPerMin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMGoldPerMin.swift; path = ../../Documents/swiftyJsonGenerated/DMGoldPerMin.swift; sourceTree = "<group>"; };
+		C7DAC5761D8626D600393519 /* DMGoldT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMGoldT.swift; path = ../../Documents/swiftyJsonGenerated/DMGoldT.swift; sourceTree = "<group>"; };
+		C7DAC5771D8626D600393519 /* DMHeroDamagePerMin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMHeroDamagePerMin.swift; path = ../../Documents/swiftyJsonGenerated/DMHeroDamagePerMin.swift; sourceTree = "<group>"; };
+		C7DAC5781D8626D600393519 /* DMHeroHealingPerMin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMHeroHealingPerMin.swift; path = ../../Documents/swiftyJsonGenerated/DMHeroHealingPerMin.swift; sourceTree = "<group>"; };
+		C7DAC5791D8626D600393519 /* DMHeroHits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMHeroHits.swift; path = ../../Documents/swiftyJsonGenerated/DMHeroHits.swift; sourceTree = "<group>"; };
+		C7DAC57A1D8626D600393519 /* DMItemUsage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMItemUsage.swift; path = ../../Documents/swiftyJsonGenerated/DMItemUsage.swift; sourceTree = "<group>"; };
+		C7DAC57B1D8626D600393519 /* DMItemUses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMItemUses.swift; path = ../../Documents/swiftyJsonGenerated/DMItemUses.swift; sourceTree = "<group>"; };
+		C7DAC57C1D8626D600393519 /* DMItemWin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMItemWin.swift; path = ../../Documents/swiftyJsonGenerated/DMItemWin.swift; sourceTree = "<group>"; };
+		C7DAC57D1D8626D600393519 /* DMKilled.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMKilled.swift; path = ../../Documents/swiftyJsonGenerated/DMKilled.swift; sourceTree = "<group>"; };
+		C7DAC57E1D8626D600393519 /* DMKilledBy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMKilledBy.swift; path = ../../Documents/swiftyJsonGenerated/DMKilledBy.swift; sourceTree = "<group>"; };
+		C7DAC57F1D8626D600393519 /* DMKillsLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMKillsLog.swift; path = ../../Documents/swiftyJsonGenerated/DMKillsLog.swift; sourceTree = "<group>"; };
+		C7DAC5801D8626D600393519 /* DMKillsPerMin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMKillsPerMin.swift; path = ../../Documents/swiftyJsonGenerated/DMKillsPerMin.swift; sourceTree = "<group>"; };
+		C7DAC5821D8626D600393519 /* DMLanePos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMLanePos.swift; path = ../../Documents/swiftyJsonGenerated/DMLanePos.swift; sourceTree = "<group>"; };
+		C7DAC5831D8626D600393519 /* DMLastHitsPerMin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMLastHitsPerMin.swift; path = ../../Documents/swiftyJsonGenerated/DMLastHitsPerMin.swift; sourceTree = "<group>"; };
+		C7DAC5841D8626D600393519 /* DMLhT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMLhT.swift; path = ../../Documents/swiftyJsonGenerated/DMLhT.swift; sourceTree = "<group>"; };
+		C7DAC5861D8626D600393519 /* DMMatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMMatch.swift; path = ../../Documents/swiftyJsonGenerated/DMMatch.swift; sourceTree = "<group>"; };
+		C7DAC5871D8626D600393519 /* DMMaxHeroHit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMMaxHeroHit.swift; path = ../../Documents/swiftyJsonGenerated/DMMaxHeroHit.swift; sourceTree = "<group>"; };
+		C7DAC5891D8626D600393519 /* DMMyWordCounts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMMyWordCounts.swift; path = ../../Documents/swiftyJsonGenerated/DMMyWordCounts.swift; sourceTree = "<group>"; };
+		C7DAC58A1D8626D600393519 /* DMObjectives.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMObjectives.swift; path = ../../Documents/swiftyJsonGenerated/DMObjectives.swift; sourceTree = "<group>"; };
+		C7DAC58B1D8626D600393519 /* DMObs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMObs.swift; path = ../../Documents/swiftyJsonGenerated/DMObs.swift; sourceTree = "<group>"; };
+		C7DAC58C1D8626D600393519 /* DMObsLeftLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMObsLeftLog.swift; path = ../../Documents/swiftyJsonGenerated/DMObsLeftLog.swift; sourceTree = "<group>"; };
+		C7DAC58D1D8626D600393519 /* DMObsLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMObsLog.swift; path = ../../Documents/swiftyJsonGenerated/DMObsLog.swift; sourceTree = "<group>"; };
+		C7DAC58F1D8626D600393519 /* DMPlayers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMPlayers.swift; path = ../../Documents/swiftyJsonGenerated/DMPlayers.swift; sourceTree = "<group>"; };
+		C7DAC5901D8626D600393519 /* DMPosData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMPosData.swift; path = ../../Documents/swiftyJsonGenerated/DMPosData.swift; sourceTree = "<group>"; };
+		C7DAC5911D8626D600393519 /* DMPurchase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMPurchase.swift; path = ../../Documents/swiftyJsonGenerated/DMPurchase.swift; sourceTree = "<group>"; };
+		C7DAC5921D8626D600393519 /* DMPurchaseLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMPurchaseLog.swift; path = ../../Documents/swiftyJsonGenerated/DMPurchaseLog.swift; sourceTree = "<group>"; };
+		C7DAC5931D8626D600393519 /* DMPurchaseTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMPurchaseTime.swift; path = ../../Documents/swiftyJsonGenerated/DMPurchaseTime.swift; sourceTree = "<group>"; };
+		C7DAC5961D8626D600393519 /* DMSenLeftLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMSenLeftLog.swift; path = ../../Documents/swiftyJsonGenerated/DMSenLeftLog.swift; sourceTree = "<group>"; };
+		C7DAC5971D8626D600393519 /* DMSenLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMSenLog.swift; path = ../../Documents/swiftyJsonGenerated/DMSenLog.swift; sourceTree = "<group>"; };
+		C7DAC5981D8626D600393519 /* DMSpecific.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMSpecific.swift; path = ../../Documents/swiftyJsonGenerated/DMSpecific.swift; sourceTree = "<group>"; };
+		C7DAC5991D8626D600393519 /* DMTeamfights.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMTeamfights.swift; path = ../../Documents/swiftyJsonGenerated/DMTeamfights.swift; sourceTree = "<group>"; };
+		C7DAC59A1D8626D600393519 /* DMTimes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMTimes.swift; path = ../../Documents/swiftyJsonGenerated/DMTimes.swift; sourceTree = "<group>"; };
+		C7DAC59B1D8626D600393519 /* DMTowerDamage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMTowerDamage.swift; path = ../../Documents/swiftyJsonGenerated/DMTowerDamage.swift; sourceTree = "<group>"; };
+		C7DAC59C1D8626D600393519 /* DMXpPerMin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMXpPerMin.swift; path = ../../Documents/swiftyJsonGenerated/DMXpPerMin.swift; sourceTree = "<group>"; };
+		C7DAC59E1D8626D600393519 /* DMXpT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DMXpT.swift; path = ../../Documents/swiftyJsonGenerated/DMXpT.swift; sourceTree = "<group>"; };
 		CD12AA8C09161714CF6C7497 /* Pods-DotaMate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DotaMate.release.xcconfig"; path = "Pods/Target Support Files/Pods-DotaMate/Pods-DotaMate.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -501,6 +641,7 @@
 				2700479D1D3676320076BC6B /* Sounds */,
 				272D5B3D1D2EDC4A00569FF2 /* Supporting Files */,
 				270454DA1D377FF400B7DA73 /* Main.storyboard */,
+				C747FF021D862C1F00896A24 /* PlayerProfile.storyboard */,
 				270FF53E1D2EB9B700E8F0AC /* AppDelegate.swift */,
 				272D5B3E1D2EDC5900569FF2 /* Model */,
 				2714E0851D33A4A700CF38DB /* View */,
@@ -563,6 +704,8 @@
 		2714E0861D33A4BC00CF38DB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C728345A1D86373500103E83 /* MatchDetails */,
+				C7018BC11D7E161200CE2961 /* UserSearch */,
 				2710F4251D3C672D00A25BC8 /* ItemVC */,
 				27004A541D3719440076BC6B /* HeroChoose */,
 				2710F4261D3C674B00A25BC8 /* guideCreateVC */,
@@ -585,6 +728,7 @@
 		272D5B3D1D2EDC4A00569FF2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C728347D1D866C6400103E83 /* UIColorFromHexExtension.swift */,
 				272D5B3C1D2EDC3A00569FF2 /* Resources */,
 				270FF5451D2EB9B700E8F0AC /* Assets.xcassets */,
 				270FF5471D2EB9B700E8F0AC /* LaunchScreen.storyboard */,
@@ -597,6 +741,7 @@
 		272D5B3E1D2EDC5900569FF2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C7018BB71D7DFF2700CE2961 /* API */,
 				27BCC9651D33615E000AB219 /* VideoModel */,
 				2714E0811D33A43700CF38DB /* Guide.swift */,
 				273453FD1D4223DD00614F22 /* Like.swift */,
@@ -655,6 +800,151 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		C7018BB71D7DFF2700CE2961 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				C7018BBE1D7E092700CE2961 /* ApiModels */,
+				C7018BB81D7DFF3300CE2961 /* DotaMateApi.swift */,
+				C7018BBA1D7DFFF100CE2961 /* DotaMateApiResources.swift */,
+				C7018BBC1D7E051300CE2961 /* AppService.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		C7018BBE1D7E092700CE2961 /* ApiModels */ = {
+			isa = PBXGroup;
+			children = (
+				C72834701D86516500103E83 /* heroes */,
+				C72834691D864BFD00103E83 /* items */,
+				C72834621D86468A00103E83 /* PlayerProfile */,
+				C7DAC5241D86266D00393519 /* Match */,
+				C7018BBF1D7E094200CE2961 /* ApiUser.swift */,
+				C7DAC5201D86249100393519 /* Match.swift */,
+				C7DAC5221D86252200393519 /* Player.swift */,
+			);
+			name = ApiModels;
+			sourceTree = "<group>";
+		};
+		C7018BC11D7E161200CE2961 /* UserSearch */ = {
+			isa = PBXGroup;
+			children = (
+				C7018BC41D7E175400CE2961 /* Cells */,
+				C7018BC21D7E162900CE2961 /* UserSearchTableViewController.swift */,
+			);
+			name = UserSearch;
+			sourceTree = "<group>";
+		};
+		C7018BC41D7E175400CE2961 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C7018BC51D7E176600CE2961 /* UserSearchTableViewCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		C728345A1D86373500103E83 /* MatchDetails */ = {
+			isa = PBXGroup;
+			children = (
+				C728345B1D86373D00103E83 /* Cells */,
+				C72834581D862E7B00103E83 /* MatchDetailsViewController.swift */,
+			);
+			name = MatchDetails;
+			sourceTree = "<group>";
+		};
+		C728345B1D86373D00103E83 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C728345E1D863D6400103E83 /* MatchDetailsPlayerTableViewCell.swift */,
+				C728345F1D863D6400103E83 /* MatchDetailsPlayerTableViewCell.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		C72834621D86468A00103E83 /* PlayerProfile */ = {
+			isa = PBXGroup;
+			children = (
+				C72834631D86469800103E83 /* DMMmrEstimate.swift */,
+				C72834641D86469800103E83 /* DMPlayerProfile.swift */,
+				C72834651D86469800103E83 /* DMProfile.swift */,
+			);
+			name = PlayerProfile;
+			sourceTree = "<group>";
+		};
+		C72834691D864BFD00103E83 /* items */ = {
+			isa = PBXGroup;
+			children = (
+				C728346A1D864C0A00103E83 /* DMItems.swift */,
+				C728346B1D864C0A00103E83 /* DMItemsSteamAPI.swift */,
+				C728346C1D864C0A00103E83 /* DMResult.swift */,
+			);
+			name = items;
+			sourceTree = "<group>";
+		};
+		C72834701D86516500103E83 /* heroes */ = {
+			isa = PBXGroup;
+			children = (
+				C72834771D8651F800103E83 /* DMHeroes.swift */,
+				C72834781D8651F800103E83 /* DMHeroesSteamAPI.swift */,
+				C72834791D8651F800103E83 /* DMResultHero.swift */,
+			);
+			name = heroes;
+			sourceTree = "<group>";
+		};
+		C7DAC5241D86266D00393519 /* Match */ = {
+			isa = PBXGroup;
+			children = (
+				C7DAC5641D8626D600393519 /* DMAbilityUpgradesArr.swift */,
+				C7DAC5651D8626D600393519 /* DMAbilityUses.swift */,
+				C7DAC5671D8626D600393519 /* DMAdditionalUnits.swift */,
+				C7DAC5681D8626D600393519 /* DMAllWordCounts.swift */,
+				C7DAC5691D8626D600393519 /* DMBenchmarks.swift */,
+				C7DAC56A1D8626D600393519 /* DMBuybackLog.swift */,
+				C7DAC56B1D8626D600393519 /* DMChat.swift */,
+				C7DAC56D1D8626D600393519 /* DMDamage.swift */,
+				C7DAC56E1D8626D600393519 /* DMDamageInflictor.swift */,
+				C7DAC56F1D8626D600393519 /* DMDamageInflictorReceived.swift */,
+				C7DAC5701D8626D600393519 /* DMDamageTaken.swift */,
+				C7DAC5721D8626D600393519 /* DMDnT.swift */,
+				C7DAC5731D8626D600393519 /* DMFirstPurchaseTime.swift */,
+				C7DAC5741D8626D600393519 /* DMGoldPerMin.swift */,
+				C7DAC5761D8626D600393519 /* DMGoldT.swift */,
+				C7DAC5771D8626D600393519 /* DMHeroDamagePerMin.swift */,
+				C7DAC5781D8626D600393519 /* DMHeroHealingPerMin.swift */,
+				C7DAC5791D8626D600393519 /* DMHeroHits.swift */,
+				C7DAC57A1D8626D600393519 /* DMItemUsage.swift */,
+				C7DAC57B1D8626D600393519 /* DMItemUses.swift */,
+				C7DAC57C1D8626D600393519 /* DMItemWin.swift */,
+				C7DAC57D1D8626D600393519 /* DMKilled.swift */,
+				C7DAC57E1D8626D600393519 /* DMKilledBy.swift */,
+				C7DAC57F1D8626D600393519 /* DMKillsLog.swift */,
+				C7DAC5801D8626D600393519 /* DMKillsPerMin.swift */,
+				C7DAC5821D8626D600393519 /* DMLanePos.swift */,
+				C7DAC5831D8626D600393519 /* DMLastHitsPerMin.swift */,
+				C7DAC5841D8626D600393519 /* DMLhT.swift */,
+				C7DAC5861D8626D600393519 /* DMMatch.swift */,
+				C7DAC5871D8626D600393519 /* DMMaxHeroHit.swift */,
+				C7DAC5891D8626D600393519 /* DMMyWordCounts.swift */,
+				C7DAC58A1D8626D600393519 /* DMObjectives.swift */,
+				C7DAC58B1D8626D600393519 /* DMObs.swift */,
+				C7DAC58C1D8626D600393519 /* DMObsLeftLog.swift */,
+				C7DAC58D1D8626D600393519 /* DMObsLog.swift */,
+				C7DAC58F1D8626D600393519 /* DMPlayers.swift */,
+				C7DAC5901D8626D600393519 /* DMPosData.swift */,
+				C7DAC5911D8626D600393519 /* DMPurchase.swift */,
+				C7DAC5921D8626D600393519 /* DMPurchaseLog.swift */,
+				C7DAC5931D8626D600393519 /* DMPurchaseTime.swift */,
+				C7DAC5961D8626D600393519 /* DMSenLeftLog.swift */,
+				C7DAC5971D8626D600393519 /* DMSenLog.swift */,
+				C7DAC5981D8626D600393519 /* DMSpecific.swift */,
+				C7DAC5991D8626D600393519 /* DMTeamfights.swift */,
+				C7DAC59A1D8626D600393519 /* DMTimes.swift */,
+				C7DAC59B1D8626D600393519 /* DMTowerDamage.swift */,
+				C7DAC59C1D8626D600393519 /* DMXpPerMin.swift */,
+				C7DAC59E1D8626D600393519 /* DMXpT.swift */,
+			);
+			name = Match;
+			sourceTree = "<group>";
+		};
 		C860E156C464BC39F1C76A60 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -677,6 +967,7 @@
 				270FF5391D2EB9B700E8F0AC /* Resources */,
 				DBA8962BB0B676EC2D2593B5 /* [CP] Embed Pods Frameworks */,
 				503F7747DDA300E165AC51CC /* [CP] Copy Pods Resources */,
+				8894E19DDFC2CF32574C3368 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -742,6 +1033,7 @@
 				270048201D3676730076BC6B /* Clinkz.mp3 in Resources */,
 				270048791D3676730076BC6B /* Windranger.mp3 in Resources */,
 				2700485E1D3676730076BC6B /* Silencer.mp3 in Resources */,
+				C72834611D863D6400103E83 /* MatchDetailsPlayerTableViewCell.xib in Resources */,
 				270048781D3676730076BC6B /* Weaver.mp3 in Resources */,
 				270048451D3676730076BC6B /* Mirana.mp3 in Resources */,
 				270048281D3676730076BC6B /* Dragon Knight.mp3 in Resources */,
@@ -755,6 +1047,7 @@
 				2700485B1D3676730076BC6B /* Shadow Demon.mp3 in Resources */,
 				270048311D3676730076BC6B /* Gyrocopter.mp3 in Resources */,
 				270048291D3676730076BC6B /* Drow Ranger.mp3 in Resources */,
+				C747FF031D862C1F00896A24 /* PlayerProfile.storyboard in Resources */,
 				2700487A1D3676730076BC6B /* Winter Wyvern.mp3 in Resources */,
 				2700484C1D3676730076BC6B /* Ogre Magi.mp3 in Resources */,
 				270048621D3676730076BC6B /* Sniper.mp3 in Resources */,
@@ -866,6 +1159,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DotaMate/Pods-DotaMate-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		8894E19DDFC2CF32574C3368 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DotaMate/Pods-DotaMate-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		8DD57F65C9E0DC95BF2AF19C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -903,40 +1211,108 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7DAC5DF1D8626D600393519 /* DMBenchmarks.swift in Sources */,
+				C7DAC5FC1D8626D600393519 /* DMMatch.swift in Sources */,
 				27CEB4EE1D4AB2740071FDB4 /* ImageCache.swift in Sources */,
 				27BCC9631D2EEE62000AB219 /* SignUpViewController.swift in Sources */,
 				270047961D3563E80076BC6B /* HeroChooseCVC.swift in Sources */,
+				C7DAC6001D8626D600393519 /* DMObjectives.swift in Sources */,
 				273453F81D42141100614F22 /* BlurImage.swift in Sources */,
+				C7DAC5231D86252200393519 /* Player.swift in Sources */,
+				C728347B1D8651F800103E83 /* DMHeroesSteamAPI.swift in Sources */,
+				C7DAC6121D8626D600393519 /* DMXpPerMin.swift in Sources */,
+				C7DAC5F11D8626D600393519 /* DMItemUses.swift in Sources */,
 				273453FA1D4218C200614F22 /* User.swift in Sources */,
+				C7DAC6111D8626D600393519 /* DMTowerDamage.swift in Sources */,
+				C7DAC5EA1D8626D600393519 /* DMGoldPerMin.swift in Sources */,
+				C7DAC6081D8626D600393519 /* DMPurchaseLog.swift in Sources */,
+				C72834681D86469800103E83 /* DMProfile.swift in Sources */,
+				C7DAC5F81D8626D600393519 /* DMLanePos.swift in Sources */,
 				27004A511D3718080076BC6B /* ItemChooseCollectionVC.swift in Sources */,
+				C7DAC5E51D8626D600393519 /* DMDamageInflictorReceived.swift in Sources */,
+				C7DAC5FA1D8626D600393519 /* DMLhT.swift in Sources */,
 				2700488C1D36E1BD0076BC6B /* Item.swift in Sources */,
+				C7DAC5F41D8626D600393519 /* DMKilledBy.swift in Sources */,
+				C7DAC6091D8626D600393519 /* DMPurchaseTime.swift in Sources */,
+				C7DAC6141D8626D600393519 /* DMXpT.swift in Sources */,
+				C7DAC5E31D8626D600393519 /* DMDamage.swift in Sources */,
+				C7DAC5E81D8626D600393519 /* DMDnT.swift in Sources */,
 				273453FC1D421AF400614F22 /* Constants.swift in Sources */,
+				C7DAC5EF1D8626D600393519 /* DMHeroHits.swift in Sources */,
+				C728346F1D864C0A00103E83 /* DMResult.swift in Sources */,
+				C728346D1D864C0A00103E83 /* DMItems.swift in Sources */,
+				C72834591D862E7B00103E83 /* MatchDetailsViewController.swift in Sources */,
 				270454DE1D3C504300B7DA73 /* NavVC.swift in Sources */,
+				C7DAC5EE1D8626D600393519 /* DMHeroHealingPerMin.swift in Sources */,
+				C7DAC60E1D8626D600393519 /* DMSpecific.swift in Sources */,
+				C7DAC60F1D8626D600393519 /* DMTeamfights.swift in Sources */,
+				C7DAC5E61D8626D600393519 /* DMDamageTaken.swift in Sources */,
 				2714E07E1D3375FB00CF38DB /* GuideTableViewCell.swift in Sources */,
+				C7DAC5DA1D8626D600393519 /* DMAbilityUpgradesArr.swift in Sources */,
+				C7DAC5DB1D8626D600393519 /* DMAbilityUses.swift in Sources */,
 				270454E01D3C510E00B7DA73 /* TabBarVC.swift in Sources */,
+				C7DAC5DD1D8626D600393519 /* DMAdditionalUnits.swift in Sources */,
 				2710F42E1D3C6E4800A25BC8 /* GuideObserveItemCVC.swift in Sources */,
 				27D41B511D4E848C001E2705 /* TimerViewController.swift in Sources */,
 				2710F42A1D3C67A600A25BC8 /* GuideObserveVC.swift in Sources */,
+				C7DAC6011D8626D600393519 /* DMObs.swift in Sources */,
 				272D5B3A1D2ED41500569FF2 /* VideoCutter.swift in Sources */,
+				C7DAC5E91D8626D600393519 /* DMFirstPurchaseTime.swift in Sources */,
 				270048911D36F5E80076BC6B /* ItemCVC.swift in Sources */,
+				C7DAC5F21D8626D600393519 /* DMItemWin.swift in Sources */,
+				C7DAC5F61D8626D600393519 /* DMKillsPerMin.swift in Sources */,
+				C7DAC6061D8626D600393519 /* DMPosData.swift in Sources */,
 				2723FC8B1D34BA700093F4AB /* ProfileViewController.swift in Sources */,
+				C7DAC6031D8626D600393519 /* DMObsLog.swift in Sources */,
 				2723FC891D3449AF0093F4AB /* resetPasswordVC.swift in Sources */,
 				2700479C1D364B5C0076BC6B /* HeroDetail.swift in Sources */,
+				C7018BC31D7E162900CE2961 /* UserSearchTableViewController.swift in Sources */,
 				270047981D3643B80076BC6B /* GuideMakerViewController.swift in Sources */,
 				27F53F321D418A50009368D9 /* CircleView.swift in Sources */,
+				C7DAC5F31D8626D600393519 /* DMKilled.swift in Sources */,
+				C7DAC5F01D8626D600393519 /* DMItemUsage.swift in Sources */,
+				C7DAC5ED1D8626D600393519 /* DMHeroDamagePerMin.swift in Sources */,
+				C72834661D86469800103E83 /* DMMmrEstimate.swift in Sources */,
 				2723FC8D1D34BA950093F4AB /* headerForProfileV.swift in Sources */,
 				270FF5411D2EB9B700E8F0AC /* WelcomeViewController.swift in Sources */,
+				C7DAC5DE1D8626D600393519 /* DMAllWordCounts.swift in Sources */,
 				270047921D350C330076BC6B /* HeroChooseVC.swift in Sources */,
+				C7DAC5F51D8626D600393519 /* DMKillsLog.swift in Sources */,
 				2714E0841D33A47200CF38DB /* Hero.swift in Sources */,
+				C7DAC60C1D8626D600393519 /* DMSenLeftLog.swift in Sources */,
+				C7DAC5F91D8626D600393519 /* DMLastHitsPerMin.swift in Sources */,
+				C7018BBB1D7DFFF100CE2961 /* DotaMateApiResources.swift in Sources */,
+				C7DAC5E41D8626D600393519 /* DMDamageInflictor.swift in Sources */,
 				2700479A1D364A5E0076BC6B /* SpellTVC.swift in Sources */,
+				C7DAC6051D8626D600393519 /* DMPlayers.swift in Sources */,
+				C7DAC5E01D8626D600393519 /* DMBuybackLog.swift in Sources */,
+				C7DAC6101D8626D600393519 /* DMTimes.swift in Sources */,
+				C72834601D863D6400103E83 /* MatchDetailsPlayerTableViewCell.swift in Sources */,
 				270FF53F1D2EB9B700E8F0AC /* AppDelegate.swift in Sources */,
 				2714E0821D33A43700CF38DB /* Guide.swift in Sources */,
+				C72834671D86469800103E83 /* DMPlayerProfile.swift in Sources */,
+				C7DAC60D1D8626D600393519 /* DMSenLog.swift in Sources */,
+				C728347E1D866C6400103E83 /* UIColorFromHexExtension.swift in Sources */,
+				C728347C1D8651F800103E83 /* DMResultHero.swift in Sources */,
+				C7DAC6071D8626D600393519 /* DMPurchase.swift in Sources */,
+				C7DAC5FD1D8626D600393519 /* DMMaxHeroHit.swift in Sources */,
+				C7DAC5E11D8626D600393519 /* DMChat.swift in Sources */,
+				C7018BBD1D7E051300CE2961 /* AppService.swift in Sources */,
+				C7DAC6021D8626D600393519 /* DMObsLeftLog.swift in Sources */,
+				C7018BB91D7DFF3300CE2961 /* DotaMateApi.swift in Sources */,
+				C728346E1D864C0A00103E83 /* DMItemsSteamAPI.swift in Sources */,
+				C7DAC5211D86249100393519 /* Match.swift in Sources */,
+				C7018BC61D7E176600CE2961 /* UserSearchTableViewCell.swift in Sources */,
+				C7018BC01D7E094200CE2961 /* ApiUser.swift in Sources */,
+				C7DAC5FF1D8626D600393519 /* DMMyWordCounts.swift in Sources */,
 				27BCC9611D2EEE50000AB219 /* LoginViewController.swift in Sources */,
 				272D5B3B1D2ED41500569FF2 /* VideoSplashViewController.swift in Sources */,
+				C728347A1D8651F800103E83 /* DMHeroes.swift in Sources */,
 				2710F42C1D3C6E2400A25BC8 /* GuideObserveSpellTVC.swift in Sources */,
 				273453FE1D4223DD00614F22 /* Like.swift in Sources */,
 				27004A531D37184A0076BC6B /* ItemWithCellCVC.swift in Sources */,
 				2710F4301D3C713C00A25BC8 /* GuideCVC.swift in Sources */,
+				C7DAC5EC1D8626D600393519 /* DMGoldT.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

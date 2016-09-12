@@ -165,16 +165,18 @@ class HeroChooseVC: UIViewController, UICollectionViewDataSource, UICollectionVi
             
             self.heroes = apiHeroes.flatMap {
                 
-                    guard let id = $0["id"] as? Int,
-                    let localizedName = $0["localized_name"] as? String,
-                    let name = $0["name"] as? String else { return nil }
-                    let imageHeroName = name.stringByReplacingOccurrencesOfString("npc_dota_hero_", withString: "")
-                    let largeURL = "http://cdn.dota2.com/apps/dota2/images/heroes/\(imageHeroName)_lg.png"
-                    let smallURL = "http://media.steampowered.com/apps/dota2/images/heroes/\(imageHeroName)_sb.png"
-                    let portraitURL = "http://cdn.dota2.com/apps/dota2/images/heroes/\(imageHeroName)_vert.jpg"
-                    
-                    return Hero(heroDotaName: name.stringByReplacingOccurrencesOfString("npc_dota_hero_", withString: ""), heroLocalizedName: localizedName, heroID: id,largeImageURL: largeURL,smallImageURL: smallURL,portraitImageURL: portraitURL)
-                }
+                guard let id = $0["id"] as? Int,
+                let localizedName = $0["localized_name"] as? String,
+                let name = $0["name"] as? String else { return nil }
+                let imageHeroName = name.stringByReplacingOccurrencesOfString("npc_dota_hero_", withString: "")
+                let largeURL = "http://cdn.dota2.com/apps/dota2/images/heroes/\(imageHeroName)_lg.png"
+                let smallURL = "http://media.steampowered.com/apps/dota2/images/heroes/\(imageHeroName)_sb.png"
+                let portraitURL = "http://cdn.dota2.com/apps/dota2/images/heroes/\(imageHeroName)_vert.jpg"
+            
+                let hero = Hero(heroDotaName: name.stringByReplacingOccurrencesOfString("npc_dota_hero_", withString: ""), heroLocalizedName: localizedName, heroID: id,largeImageURL: largeURL,smallImageURL: smallURL,portraitImageURL: portraitURL)
+    
+                return hero
+            }
             .sort { $0.heroLocalizedName < $1.heroLocalizedName }
         }
     }

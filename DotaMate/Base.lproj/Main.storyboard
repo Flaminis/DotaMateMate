@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -800,6 +800,7 @@ Profile image➙</string>
                         <segue destination="vuJ-Mf-vbe" kind="relationship" relationship="viewControllers" id="UrU-b6-MkU"/>
                         <segue destination="PKB-WP-JwN" kind="relationship" relationship="viewControllers" id="auh-bs-M9w"/>
                         <segue destination="PO2-lg-MVf" kind="relationship" relationship="viewControllers" id="LAW-bj-k9W"/>
+                        <segue destination="a2c-Cr-Zww" kind="relationship" relationship="viewControllers" id="n3b-tV-zJ1"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zam-Hh-kKz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -942,7 +943,8 @@ Profile image➙</string>
                                         <exclude reference="NRI-ym-bdH"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" axis="vertical">
+                                <variation key="widthClass=compact" axis="vertical" misplaced="YES">
+                                    <rect key="frame" x="291" y="126" width="89" height="107"/>
                                     <mask key="constraints">
                                         <include reference="NRI-ym-bdH"/>
                                     </mask>
@@ -2766,6 +2768,144 @@ Profile image➙</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f46-kQ-xax" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3490.5" y="-1077"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="jet-DI-umc">
+            <objects>
+                <tableViewController id="shl-mn-awJ" customClass="UserSearchTableViewController" customModule="DotaMate" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="op7-iK-VQA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="userSearchCell" id="rHh-0A-i82" customClass="UserSearchTableViewCell" customModule="DotaMate" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rHh-0A-i82" id="M2d-5E-fbh">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z4q-cM-N6t">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="Ft3-ai-SFV"/>
+                                                <constraint firstAttribute="width" constant="40" id="Mwc-gS-o8F"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="Ft3-ai-SFV"/>
+                                                    <exclude reference="Mwc-gS-o8F"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="widthClass=compact">
+                                                <mask key="constraints">
+                                                    <include reference="Ft3-ai-SFV"/>
+                                                    <include reference="Mwc-gS-o8F"/>
+                                                </mask>
+                                            </variation>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1o-BH-cuO">
+                                            <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="z4q-cM-N6t" firstAttribute="top" secondItem="M2d-5E-fbh" secondAttribute="topMargin" constant="-6" id="8BM-A5-TNR"/>
+                                        <constraint firstItem="N1o-BH-cuO" firstAttribute="top" secondItem="M2d-5E-fbh" secondAttribute="topMargin" constant="3" id="FXU-bc-Cih"/>
+                                        <constraint firstItem="N1o-BH-cuO" firstAttribute="leading" secondItem="z4q-cM-N6t" secondAttribute="trailing" constant="8" id="JVN-UT-yX1"/>
+                                        <constraint firstItem="N1o-BH-cuO" firstAttribute="trailing" secondItem="M2d-5E-fbh" secondAttribute="trailingMargin" id="SsJ-sz-HrT"/>
+                                        <constraint firstItem="N1o-BH-cuO" firstAttribute="leading" secondItem="z4q-cM-N6t" secondAttribute="trailing" constant="8" id="VWJ-jR-EfU"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="z4q-cM-N6t" secondAttribute="bottom" constant="-6.5" id="bQ4-ZZ-FSV"/>
+                                        <constraint firstItem="z4q-cM-N6t" firstAttribute="leading" secondItem="M2d-5E-fbh" secondAttribute="leadingMargin" id="mtJ-zP-qtW"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="N1o-BH-cuO" secondAttribute="bottom" constant="3.5" id="wOJ-7m-tbO"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="subviews">
+                                            <exclude reference="z4q-cM-N6t"/>
+                                            <exclude reference="N1o-BH-cuO"/>
+                                        </mask>
+                                        <mask key="constraints">
+                                            <exclude reference="FXU-bc-Cih"/>
+                                            <exclude reference="JVN-UT-yX1"/>
+                                            <exclude reference="SsJ-sz-HrT"/>
+                                            <exclude reference="VWJ-jR-EfU"/>
+                                            <exclude reference="wOJ-7m-tbO"/>
+                                            <exclude reference="8BM-A5-TNR"/>
+                                            <exclude reference="bQ4-ZZ-FSV"/>
+                                            <exclude reference="mtJ-zP-qtW"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="widthClass=compact">
+                                        <mask key="subviews">
+                                            <include reference="z4q-cM-N6t"/>
+                                            <include reference="N1o-BH-cuO"/>
+                                        </mask>
+                                        <mask key="constraints">
+                                            <include reference="FXU-bc-Cih"/>
+                                            <include reference="JVN-UT-yX1"/>
+                                            <include reference="SsJ-sz-HrT"/>
+                                            <include reference="VWJ-jR-EfU"/>
+                                            <include reference="wOJ-7m-tbO"/>
+                                            <include reference="8BM-A5-TNR"/>
+                                            <include reference="bQ4-ZZ-FSV"/>
+                                            <include reference="mtJ-zP-qtW"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="avatarImageView" destination="z4q-cM-N6t" id="79o-9X-EQe"/>
+                                    <outlet property="displayNameLabel" destination="N1o-BH-cuO" id="yjs-Lg-qGd"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="shl-mn-awJ" id="Xhj-Er-tbx"/>
+                            <outlet property="delegate" destination="shl-mn-awJ" id="I9R-VV-zxI"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="nfM-Pf-Agc">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="1KP-vo-pfl">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kPV-AZ-e9B">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="HlN-hf-kNM" kind="show" id="JUT-0K-3Ge"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Sc-g8-xGk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2505" y="1829"/>
+        </scene>
+        <!--matchDetailsView-->
+        <scene sceneID="dxt-c0-M6F">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PlayerProfile" referencedIdentifier="matchDetailsView" id="HlN-hf-kNM" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5bu-48-W2I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3093.75" y="1983"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="rZD-gI-51B">
+            <objects>
+                <navigationController id="a2c-Cr-Zww" customClass="NavVC" customModule="DotaMate" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Gdx-76-Aei"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="okp-6H-i65">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="shl-mn-awJ" kind="relationship" relationship="rootViewController" id="pD6-XR-vTO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wrf-gy-Ax7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1575" y="1829"/>
         </scene>
         <!--NavVC-->
         <scene sceneID="4gn-QB-fKZ">
